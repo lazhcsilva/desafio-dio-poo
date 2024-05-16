@@ -23,13 +23,13 @@ public class Dev {
 
         if(conteudo.isPresent()) {
             this.conteudosConcluidos.add(conteudo.get());
-            this.getConteudosInscritos().remove(conteudo.get());
+            this.conteudosInscritos.remove(conteudo.get());
         } else {
             System.err.println("Você não está matriculado em nenhum conteúdo");
         }
     }
 
-    public double calcularXp() {
+    public double calcularTotalXp() {
         return this.conteudosConcluidos
                 .stream()
                 .mapToDouble(Conteudo::calcularXp)
